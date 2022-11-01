@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Architects Daughter', cursive;
+    
+}
+
+article {
+    height: 100vh;
+    width: 100%;
+}
+
+#starScreen {
+    background-color: bisque;
+    height: 100vh;
+    width: 100%;
+
+}
+
+#gameScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+#gameScreen h1{
+    font-size: 40px;
+    margin: 50px;
+    margin-left: 150px;
+}
+
+
+#gamePage {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+    height: 100vh;
+    width: 100%;
+}
+
+#gamePage button{
+    margin-bottom: 50px;
+    margin-left: 100px;
+    height: 50px;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    align-items: center;
+    align-content: center;
+
+
+}
+
+#boardGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 100px;
+
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 10px 10px;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    display: inline-table;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-left: 100px;;
+    
+}
+
+table #A1, #B1, #C1{
+    border-top: none;
+}
+
+table #A3, #B3, #C3 {
+    border-bottom: none;
+}
+
+table #A1, #A2, #A3 {
+    border-left: none;
+}
+
+table #C1, #C2, #C3 {
+    border-right: none;
+}
+
+td {
+    font-size: 2rem;
+    border-style: solid;
+    height: 80px;
+    width: 80px;
+    
+}
+
+td:hover {
+    background-color: rgb(197, 210, 254);
+}
+
+
+#playerX, #playerO {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+       
+}
+
+#score {
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#score p{
+    margin-left: 20px;
+    
+}
+
+#score img{
+    height: 10vh;
+    
+}
+
+<<<<<<< HEAD
+#playerX img {
+    background-color:rgba(128, 128, 128, 0.308);
+    border-radius: 10px;
+}
+
+#playerO img {
+    background-color:rgba(128, 128, 128, 0.308);
+    border-radius: 10px;
+}
+
+#scoreO, #scoreX {
+    font-size: 1.5rem;
+}
+
+
+=======
+#scoreO, #scoreX {
+    font-size: 1.5rem;
+}
+>>>>>>> 3889ede5f72d5fb3d1fbe13eae6cb7126defe50b
