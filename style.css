@@ -140,25 +140,3 @@ td:hover {
     height: 10vh;
     
 }
-
-<<<<<<< HEAD
-#playerX img {
-    background-color:rgba(128, 128, 128, 0.308);
-    border-radius: 10px;
-}
-
-#playerO img {
-    background-color:rgba(128, 128, 128, 0.308);
-    border-radius: 10px;
-}
-
-#scoreO, #scoreX {
-    font-size: 1.5rem;
-}
-
-
-=======
-#scoreO, #scoreX {
-    font-size: 1.5rem;
-}
->>>>>>> 3889ede5f72d5fb3d1fbe13eae6cb7126defe50b
