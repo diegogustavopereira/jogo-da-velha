@@ -128,7 +128,12 @@ li {
 }
 
 
-/*Game Screen*/
+/*Game Screen
+
+
+
+
+*/
 
 
 #gameScreen {
@@ -158,16 +163,6 @@ li {
     width: 100%;
 }
 
-#btnGame{
-    margin-bottom: 50px;
-    margin-left: 100px;
-    height: 50px;
-    width: 100px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 1000;
-    align-items: center;
-    align-content: center;
-}
 
 #boardGame {
     display: flex;
@@ -213,9 +208,66 @@ td {
     width: 80px;
 }
 
-td:hover {
-    background-color: rgb(197, 210, 254);
+td.fill {
+    cursor:not-allowed;
 }
+
+td:not(.fill):hover {
+    
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+}
+
+.O td:not(.fill):hover::before {
+    content: "O";
+    
+}
+
+.X td:not(.fill):hover::before {
+    content: "X";
+    
+}
+
+#btnsBoardGame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#btnNewGame,
+#btnClose{
+    margin-bottom: 50px;
+    margin-left: 100px;
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: #03113a;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 1000;
+    color: white;
+    font-size: 1.2rem;
+
+    align-items: center;
+    align-content: center;
+    
+    opacity: 0.9;
+    transition: 0.4s;
+    cursor: pointer;
+}
+#btnNewGame:hover,
+#btnClose:hover {
+    opacity: 1;
+    box-shadow: 1px 2px 4px 2px #A9A9A9;
+}
+
+
+
+
+
+
 
 #score {
     display: flex;
@@ -258,5 +310,120 @@ td:hover {
     margin-bottom: 5px;
 }
 
+
+
+
+
+
+
+
+/*Modal Screen
+//
+//
+//
+//
+//
+//
+*/
+#modal {
+    width: 30vw;
+    height: 30vh;
+    
+    position: fixed;
+    left: 50%; /*borda*/
+    top: 50%;
+    transform: translate(-50%, -50%); /* descola o ponto para cálculo da borda*/
+    
+    z-index: 10;
+    border: 1px solid black;
+    background-color: #fffafa;
+    border-radius: 10px;
+    overflow: hidden;
+      
+}
+
+#modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#stage {
+    height: 23vh;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    perspective: 1000px;
+}
+
+#msgModal{
+    margin-top: 1.8vh;
+    font-size: 1.3rem;
+    font-weight: 800;
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+
+    text-shadow: 2px 2px 4px gray
+    
+}
+
+#stage img{
+    height: 22vh;
+    /* position: absolute; */
+}
+
+#modal button {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #03113a;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+#modal button:hover {
+    opacity: 1;
+    box-shadow: 1px 2px 4px 2px #A9A9A9;
+}
+
+#fade {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 5;
+}
+
+#modal.hide,
+#fade.hide {
+    opacity: 0;
+    pointer-events: none; /*desabilita o evento de click com opacidade = 0*/
+}
+
+#modal.hide{
+    top: 0; /*indica que ficará na posição 0 para fazer o movimento após ser ativado*/
+}
+
+#fade, #modal{
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all; /*indica que os eventos somente funcionarão quando opacidade = 1*/
+}
 
 

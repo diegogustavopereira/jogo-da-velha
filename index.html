@@ -39,27 +39,30 @@
 
         <section id="gamePage">
 
-            <section id="boardGame">
+            <section id="boardGame" class="">
 
                 <table>
                     <tr>
-                        <td id="A1"></td>
-                        <td id="B1"></td>
-                        <td id="C1"></td>
+                        <td id="A1" class=""></td>
+                        <td id="B1" class=""></td>
+                        <td id="C1" class=""></td>
                     </tr>
                     <tr>
-                        <td id="A2"></td>
-                        <td id="B2"></td>
-                        <td id="C2"></td>
+                        <td id="A2" class=""></td>
+                        <td id="B2" class=""></td>
+                        <td id="C2" class=""></td>
                     </tr>
                     <tr>
-                        <td id="A3"></td>
-                        <td id="B3"></td>
-                        <td id="C3"></td>
+                        <td id="A3" class=""></td>
+                        <td id="B3" class=""></td>
+                        <td id="C3" class=""></td>
                     </tr>
                 </table>
 
-                <button id="btnGame">Jogar!</button>
+                <div id="btnsBoardGame">
+                    <button id="btnNewGame">Novo jogo</button>
+                    <!-- <button id="btnClose">Sair</button> -->
+                </div>
 
             </section>
 
@@ -81,6 +84,26 @@
             </section>
 
         </section>
+
+    </article>
+
+    <article id="modalScreen">
+
+        <div id="fade" class="hide">
+
+        </div>
+
+        <div id="modal" class="hide">
+            <div id="modal-content">
+                <div id="stage">
+                    <img src="" id="imageModal">
+                    <h2 id="msgModal"></h2>
+                </div>
+                <div>
+                    <button id="btnOk">OK</button>
+                </div>
+            </div>
+        </div>
 
     </article>
 

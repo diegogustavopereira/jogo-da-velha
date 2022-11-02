@@ -9,6 +9,7 @@ const btnStart = document.getElementById("btnStart");
 
 //ids gameScreen
 const gameScreen = document.getElementById("gameScreen");
+const boardGame = document.getElementById("boardGame");
 const cellA1 = document.getElementById("A1");
 const cellB1 = document.getElementById("B1");
 const cellC1 = document.getElementById("C1");
@@ -18,12 +19,24 @@ const cellC2 = document.getElementById("C2");
 const cellA3 = document.getElementById("A3");
 const cellB3 = document.getElementById("B3");
 const cellC3 = document.getElementById("C3");
-const btnGame = document.getElementById("btnGame");
+const btnNewGame = document.getElementById("btnNewGame");
 const nameO = document.getElementById("nameO");
 const nameX = document.getElementById("nameX");
 const scoreO = document.getElementById("scoreO");
 const scoreX = document.getElementById("scoreX");
 
+
+//ids modalScreen
+const btnOpen = document.getElementById("btnOpen");
+const btnOk = document.getElementById("btnOk");
+const modal = document.getElementById("modal");
+const fade = document.getElementById("fade");
+const msgModal = document.getElementById("msgModal");
+const imageModal = document.getElementById("imageModal");
+const vencedor = "/vencedor.png";
+const empate = "/empate.png";
+
+//eventos
 
 btnStart.addEventListener("click", (event) => {
     event.preventDefault();
@@ -46,12 +59,14 @@ btnStart.addEventListener("click", (event) => {
 
     startScreen.style.display = "none";
     gameScreen.style.display = "flex";
+    boardGame.className = "O";
 
-    game.startGame();
+
+    startGame();
 
 })
 
-btnGame.addEventListener("click", (event) => {
+btnNewGame.addEventListener("click", (event) => {
     event.preventDefault();
     game.startGame();
     nwp1.value = "";
@@ -60,11 +75,22 @@ btnGame.addEventListener("click", (event) => {
     gameScreen.style.display = "none";
 })
 
+function startGame(){
+    eraseClass();
+    game.startGame();
+}
+
 
 function verifyCell(n, cell) {
     if (cell.innerText === "") {
         let retorno = game.fillCell(n);
         cell.innerText = retorno;
+        cell.className = "fill";
+        if (retorno === "O"){
+            boardGame.className = "X";
+        } else {
+            boardGame.className = "O";
+        }
         let check = game.checkResult();
         console.log(check);
         let option = check[0];
@@ -77,10 +103,12 @@ function verifyCell(n, cell) {
                 scoreO.innerText = scoreText;
             }
             setTimeout(() => game.startGame(), 1000);
-            setTimeout(() => { alert(`${winner} é o vencedor!`) }, 10);
-        } else if (option === 2){
+            let msg = winner + " venceu!";
+            toggleModal(msg, vencedor);
+            } else if (option === 2){
             setTimeout(() => game.startGame(), 1000);
-            setTimeout(() => { alert(`Vocês empataram!`) }, 10);
+            let msg = "Empate!";
+            toggleModal(msg, empate);
         }
     } else {
         alert("Campo já selecionado. Escolha outro");
@@ -107,8 +135,25 @@ cellB3.addEventListener("click", () => verifyCell(7, cellB3));
 cellC3.addEventListener("click", () => verifyCell(8, cellC3));
 
 
+/*função modal*/
+function toggleModal(msg, img) {
+    if(msg != undefined && img != undefined){
+    imageModal.src = img;
+    msgModal.textContent = msg;
+    }
+    [modal, fade].forEach((el) => el.classList.toggle("hide")); //toggle - alternância da classe - 
+                                                                //se está, é removida; caso contrário é adicionada    
+    
+};
 
+function eraseClass(){
+    [cellA1, cellB1, cellC1, cellA2, cellB2, cellC2, cellA3, cellB3, cellC3].forEach((item) => {
+        item.className = " ";
+        console.log(item.className.value);
+    });
+};
 
-
-
-
+btnOk.addEventListener("click", () => {
+    toggleModal();
+    eraseClass();
+});
