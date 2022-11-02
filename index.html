@@ -14,15 +14,27 @@
 </head>
 
 <body>
-    
-    <article id="starScreen">
-        <h1>JOGO DA VELHA</h1>
-        
-    </article>
+    <section id="startScreen">
+        <ul id="ulDesing"></ul>
+
+        <article id="welcomeScreen">
+            <h1>JOGO DA VELHA</h1>
+            <div id="wp1">
+                <img src="/O.png">
+                <input id="nwp1" type="text" placeholder="Player 1">
+
+            </div>
+            <div id="wp2">
+                <img src="/X.png">
+                <input id="nwp2" type="text" placeholder="Player 2">
+            </div>
+            <button id="btnStart">Jogar!</button>
+        </article>
+    </section>
 
     <article id="gameScreen">
 
-        
+
         <h1>JOGO DA VELHA</h1>
 
         <section id="gamePage">
@@ -47,29 +59,35 @@
                     </tr>
                 </table>
 
-                <button id="btnStart">Jogar!</button>
+                <button id="btnGame">Jogar!</button>
 
             </section>
 
             <section id="score">
-                <div id="playerO">
+                <div id="playerimg">
                     <img src="/O.png">
-                    <p id="scoreO">0</p>
-                </div>
-                <div id="playerX">
                     <img src="/X.png">
-                    <p id="scoreX">0</p>
+                </div>
+                <div id="players">
+                    <div id="playerO">
+                        <p id="nameO"></p>
+                        <p id="scoreO">0</p>
+                    </div>
+                    <div id="playerX">
+                        <p id="nameX"></p>
+                        <p id="scoreX">0</p>
+                    </div>
                 </div>
             </section>
-
 
         </section>
 
     </article>
 
+    <script src="/script-animation.js"></script>
     <script src="/script.js"></script>
     <script src="/dom.js"></script>
-    
+
 </body>
 
 </html>

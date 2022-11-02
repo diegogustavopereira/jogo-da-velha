@@ -6,8 +6,8 @@ class Game {
             "g", "h", "i"
         ];
         this.player = {
-            O: ["joão", 0],
-            X: ["zé", 0]
+            O: ["", 0],
+            X: ["", 0]
         };
         this.orderGame = [];
         
@@ -29,7 +29,7 @@ class Game {
 
     checkResult() {
         let winnerName = "";
-        let resultado = "";
+        let resultado = [];
         if (this.matrix[0] === this.matrix[1] && this.matrix[1] === this.matrix[2] ||
             this.matrix[3] === this.matrix[4] && this.matrix[4] === this.matrix[5] ||
             this.matrix[6] === this.matrix[7] && this.matrix[7] === this.matrix[8] ||
@@ -41,13 +41,14 @@ class Game {
             //verificar quem fez a última jogada e anunciá-lo como vencedor
             let winner = this.orderGame[this.orderGame.length - 1];
             winnerName = this.player[winner][0];
-            resultado = `${winnerName} é o vencedor!`
+            resultado.push(1, winnerName);
             return resultado;
         } else if (this.orderGame.length === 9){
-            resultado = `Vocês empataram!`;
+            resultado.push(2, "");
             return resultado;
         } else {
-          return 0;
+            resultado.push(0, "");
+            return resultado;
         }
         
     }
@@ -60,11 +61,6 @@ class Game {
     
 
     fillCell(indice){
-        
-        if (this.matrix[indice] === 0 || this.matrix[indice] === 1){
-            let msg = "Campo já preenchido!";
-            return msg;
-        }
         
         let symbol = "";
         let valor = 0;

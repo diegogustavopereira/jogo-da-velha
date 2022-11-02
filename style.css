@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Architects Daughter', cursive;
 }
 
 body {
@@ -8,24 +9,130 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    
+}
+
+/*First Screen*/
+
+#startScreen {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#welcomeScreen {
+    background-color: #A7C7FC;
+    width: 50vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    border: 2px solid black;
+    box-shadow: 5px 5px 10px 0px grey;
+    border-radius: 10px;
+}
+
+#welcomeScreen h1{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 20px;
+    padding-top: 0px;
     font-family: 'Architects Daughter', cursive;
     
 }
 
-article {
-    height: 100vh;
-    width: 100%;
+#btnStart {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #03113A;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
-#starScreen {
-    background-color: bisque;
-    height: 100vh;
-    width: 100%;
-
+#btnStart:hover {
+    box-shadow: 1px 2px 4px 4px grey;
 }
+
+#wp1, #wp2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+            
+}
+
+#wp2 {
+    padding-bottom: 20px;
+}
+
+#wp1 img,
+#wp2 img {
+    height: 5vh;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+#nwp1, #nwp2 {
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    border-width: 0.5px;
+    font-weight: 1000;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -50px;
+    animation: up 3s infinite alternate;
+    font-family: "Architects Daughter", cursive;
+    font-size: 50px;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-900px) rotate(900deg);
+    }
+}
+
+
+/*Game Screen*/
+
 
 #gameScreen {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -51,7 +158,7 @@ article {
     width: 100%;
 }
 
-#gamePage button{
+#btnGame{
     margin-bottom: 50px;
     margin-left: 100px;
     height: 50px;
@@ -60,8 +167,6 @@ article {
     font-weight: 1000;
     align-items: center;
     align-content: center;
-
-
 }
 
 #boardGame {
@@ -70,7 +175,6 @@ article {
     justify-content: center;
     align-items: center;
     margin-right: 100px;
-
 }
 
 
@@ -84,7 +188,6 @@ table {
     align-items: center;
     margin-bottom: 50px;
     margin-left: 100px;;
-    
 }
 
 table #A1, #B1, #C1{
@@ -108,35 +211,52 @@ td {
     border-style: solid;
     height: 80px;
     width: 80px;
-    
 }
 
 td:hover {
     background-color: rgb(197, 210, 254);
 }
 
-
-#playerX, #playerO {
+#score {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-       
 }
 
-#score {
+#playerimg, #players {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#playerimg img {
+    height: 10vh;
+    margin: 10px;
     justify-content: center;
     align-items: center;
-    
 }
 
-#score p{
-    margin-left: 20px;
-    
-}
-
-#score img{
+#playerO, #playerX {
     height: 10vh;
-    
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
+
+#playerO {
+    margin-bottom: 15px;
+}
+
+#nameO, #nameX {
+    margin-bottom: 5px;
+}
+
+
+
