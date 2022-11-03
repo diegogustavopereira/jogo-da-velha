@@ -18,6 +18,10 @@ for (let i = 0; i < 50; i++) {
     if (i % 2 === 0) {
         li.innerHTML = "X";
         li.style.color = "red";
+    // } else if (i % 3 === 0) {
+    //     li.innerHTML = "#";
+    //     li.style.fontSize = "5rem";
+    //     li.style.color = "black";
     } else {
         li.innerHTML = "O";
         li.style.color = "#202D68";

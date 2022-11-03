@@ -1,3 +1,4 @@
+import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 const game = new Game();
 
 //ids starScreen
@@ -27,7 +28,6 @@ const scoreX = document.getElementById("scoreX");
 
 
 //ids modalScreen
-const btnOpen = document.getElementById("btnOpen");
 const btnOk = document.getElementById("btnOk");
 const modal = document.getElementById("modal");
 const fade = document.getElementById("fade");
@@ -35,6 +35,8 @@ const msgModal = document.getElementById("msgModal");
 const imageModal = document.getElementById("imageModal");
 const vencedor = "./vencedor.png";
 const empate = "./empate.png";
+const campeaoX = "./xCampeao.png";
+const campeaoO = "./oCampeao.png";
 
 //eventos
 
@@ -66,18 +68,41 @@ btnStart.addEventListener("click", (event) => {
 
 })
 
-btnNewGame.addEventListener("click", (event) => {
-    event.preventDefault();
-    game.startGame();
-    nwp1.value = "";
-    nwp2.value = "";
-    startScreen.style.display = "flex";
-    gameScreen.style.display = "none";
-})
-
 function startGame(){
     eraseClass();
     game.startGame();
+}
+
+btnNewGame.addEventListener("click", (event) => {
+    event.preventDefault();
+    let resultado = game.checkClose();
+    let img = "";
+
+    switch (resultado){
+        case "O":
+            img = campeaoO;
+            break;
+        case "X":
+            img = campeaoX;
+            break;
+        case "OX":
+            img = empate;
+    }
+
+    let msg = "";
+    toggleModal(msg, img);
+    party();
+    startGame();
+    nwp1.value = "";
+    nwp2.value = "";
+    setTimeout(() => {
+        startScreen.style.display = "flex";
+        gameScreen.style.display = "none";
+    }, 2000);
+});
+
+function party(){
+    confetti();
 }
 
 

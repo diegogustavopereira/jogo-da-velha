@@ -53,6 +53,18 @@ class Game {
         
     }
 
+    checkClose() {
+        let scoreO = Number(this.player["O"][1]);
+        let scoreX = Number(this.player["X"][1]);
+        if (scoreO > scoreX){
+            return "O";
+        } else if (scoreO === scoreX){
+            return "OX";
+        } else {
+            return "X";
+        }
+    }
+
     score(winner) {
         let score = this.player[winner][1] + 1;
         this.player[winner][1] = score;

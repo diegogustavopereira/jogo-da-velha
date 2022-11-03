@@ -13,7 +13,12 @@ body {
     
 }
 
-/*First Screen*/
+/*First Screen
+//
+//
+//
+//
+*/
 
 #startScreen {
     width: 100vw;
@@ -129,10 +134,10 @@ li {
 
 
 /*Game Screen
-
-
-
-
+//
+//
+//
+//
 */
 
 
@@ -212,20 +217,27 @@ td.fill {
     cursor:not-allowed;
 }
 
-td:not(.fill):hover {
-    
-    background-color: rgba(0,0,0,0.1);
+td:not(.fill):hover, 
+.O td:not(.fill):hover {
+    background-color: rgba(4, 8, 250, 0.1);
+    border-radius: 50%;
+}
+
+td:not(.fill):hover, 
+.X td:not(.fill):hover {
+    background-color: rgba(250, 4, 4, 0.1);
     border-radius: 50%;
 }
 
 .O td:not(.fill):hover::before {
     content: "O";
-    
+    opacity: 0.3;
 }
 
 .X td:not(.fill):hover::before {
     content: "X";
-    
+    opacity: 0.3;
+        
 }
 
 #btnsBoardGame {
@@ -262,12 +274,6 @@ td:not(.fill):hover {
     opacity: 1;
     box-shadow: 1px 2px 4px 2px #A9A9A9;
 }
-
-
-
-
-
-
 
 #score {
     display: flex;
