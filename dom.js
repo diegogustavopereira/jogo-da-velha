@@ -33,8 +33,8 @@ const modal = document.getElementById("modal");
 const fade = document.getElementById("fade");
 const msgModal = document.getElementById("msgModal");
 const imageModal = document.getElementById("imageModal");
-const vencedor = "/vencedor.png";
-const empate = "/empate.png";
+const vencedor = "./vencedor.png";
+const empate = "./empate.png";
 
 //eventos
 
